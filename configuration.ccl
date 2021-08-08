@@ -1,0 +1,11 @@
+# Configuration definitions for thorn ssht
+
+PROVIDES SSHT
+{
+  SCRIPT src/detect.sh
+  LANG bash
+  OPTIONS SSHT SSHT_DIR SSHT_INSTALL_DIR SSHT_INC_DIRS SSHT_LIB_DIRS SSHT_LIBS
+}
+
+# Pass configuration options to build script
+REQUIRES SSHT
