@@ -1,6 +1,6 @@
 # Configuration definitions for thorn ssht
 
-PROVIDES SSHT
+PROVIDES ssht
 {
   SCRIPT src/detect.sh
   LANG bash
@@ -8,4 +8,4 @@ PROVIDES SSHT
 }
 
 # Pass configuration options to build script
-REQUIRES SSHT
+REQUIRES ssht
