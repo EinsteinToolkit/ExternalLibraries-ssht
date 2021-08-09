@@ -34,7 +34,7 @@ fi
 # assign default values to variables.
 # Try to find the library if build isn't explicitly requested
 if [ -z "${SSHT_BUILD}" -a -z "${SSHT_INC_DIRS}" -a -z "${SSHT_LIB_DIRS}" -a -z "${SSHT_LIBS}" ]; then
-    find_lib SSHT amrex 1 1.0 "amrex" "ssht.H" "$SSHT_DIR"
+    find_lib SSHT ssht 1 1.0 "ssht" "ssht.H" "$SSHT_DIR"
 fi
 
 THORN=ssht
@@ -63,7 +63,7 @@ if [ -n "$SSHT_BUILD" -o -z "${SSHT_DIR}" ]; then
     # Fortran modules may be located in the lib directory
     SSHT_INC_DIRS="${SSHT_DIR}/include ${SSHT_DIR}/lib"
     SSHT_LIB_DIRS="${SSHT_DIR}/lib"
-    SSHT_LIBS="amrex"
+    SSHT_LIBS="ssht"
 else
     DONE_FILE=${SCRATCH_BUILD}/done/${THORN}
     if [ ! -e ${DONE_FILE} ]; then
