@@ -1,6 +1,7 @@
 # Main make.code.deps file for thorn ssht
 
 export SSHT_INSTALL_DIR CMAKE_DIR
+export FFTW3_DIR FFTW3_INC_DIRS FFTW3_LIB_DIRS FFTW3_LIBS
 
 $(CCTK_TARGET) $(OBJS) $(SRCS:%=%.d): $(SCRATCH_BUILD)/done/$(THORN)
 

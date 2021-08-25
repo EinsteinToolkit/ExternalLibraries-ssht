@@ -46,7 +46,16 @@ unset LIBS
 
 mkdir build
 cd build
-${CMAKE_DIR:+${CMAKE_DIR}/bin/}cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
+# cannot be passed as CMake option unfortunately
+# not perfect since CMake still queries pkg-config but setting
+# FFTW3_INCLUDE_DIR and FFTW3_LIBRARIES triggers abug in FindFFTW3.cmake where
+# it returns() too early before all targets are set
+# need to strip trailing spaces since they confuse CMake, and CMake needs ";"
+# to separate paths
+export FFTW3_LIBRARY_DIR="$(echo ${FFTW3_LIB_DIRS} | sed 's/ *$//;s/^ *//;s/ /;/g')"
+export FFTW3_INCLUDE_DIR="$(echo ${FFTW3_INC_DIRS} | sed 's/ *$//;s/^ *//;s/ /;/g')"
+
+${CMAKE_DIR:+${CMAKE_DIR}/bin/}cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DFFTW3_FIND_COMPONENTS=DOUBLE_SERIAL ..
 
 echo "ssht: Building..."
 ${MAKE}
