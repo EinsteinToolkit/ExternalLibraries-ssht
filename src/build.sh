@@ -14,7 +14,7 @@ set -e                          # Abort on errors
 
 # Set locations
 THORN=ssht
-NAME=ssht-1.5.0
+NAME=ssht-1.5.1
 SRCDIR="$(dirname $0)"
 BUILD_DIR=${SCRATCH_BUILD}/build/${THORN}
 if [ -z "${SSHT_INSTALL_DIR}" ]; then
