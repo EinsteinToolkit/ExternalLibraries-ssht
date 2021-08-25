@@ -34,7 +34,7 @@ fi
 # assign default values to variables.
 # Try to find the library if build isn't explicitly requested
 if [ -z "${SSHT_BUILD}" -a -z "${SSHT_INC_DIRS}" -a -z "${SSHT_LIB_DIRS}" -a -z "${SSHT_LIBS}" ]; then
-    find_lib SSHT ssht 1 1.0 "ssht" "ssht.H" "$SSHT_DIR"
+    find_lib SSHT ssht 1 1.0 "ssht" "ssht.h" "$SSHT_DIR"
 fi
 
 THORN=ssht
