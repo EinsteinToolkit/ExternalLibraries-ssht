@@ -46,7 +46,7 @@ unset LIBS
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
+${CMAKE_DIR:+${CMAKE_DIR}/bin/}cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} ..
 
 echo "ssht: Building..."
 ${MAKE}

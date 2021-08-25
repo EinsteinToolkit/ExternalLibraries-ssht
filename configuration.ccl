@@ -9,3 +9,7 @@ PROVIDES ssht
 
 # Pass configuration options to build script
 REQUIRES ssht MPI FFTW3
+
+OPTIONAL CMake
+{
+}
