@@ -11,6 +11,18 @@ fi
 set -e                          # Abort on errors
 
 
+    
+# Define some environment variables
+export CC=${EXTERNAL_CC:-${CC}}
+export CXX=${EXTERNAL_CXX:-${CXX}}
+export F90=${EXTERNAL_F90:-${F90}}
+export LD=${EXTERNAL_LD:-${LD}}
+export CFLAGS=${EXTERNAL_CFLAGS:-${CFLAGS}}
+export CXXFLAGS=${EXTERNAL_CXXFLAGS:-${CXXFLAGS}}
+export F90FLAGS=${EXTERNAL_F90FLAGS:-${F90FLAGS}}
+export LDFLAGS=${EXTERNAL_LDFLAGS:-${LDFLAGS}}
+
+
 
 # Set locations
 THORN=ssht
