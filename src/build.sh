@@ -67,7 +67,7 @@ cd build
 export FFTW3_LIBRARY_DIR="$(echo ${FFTW3_LIB_DIRS} | sed 's/ *$//;s/^ *//;s/ /;/g')"
 export FFTW3_INCLUDE_DIR="$(echo ${FFTW3_INC_DIRS} | sed 's/ *$//;s/^ *//;s/ /;/g')"
 
-${CMAKE_DIR:+${CMAKE_DIR}/bin/}cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DFFTW3_FIND_COMPONENTS=DOUBLE_SERIAL ..
+${CMAKE_DIR:+${CMAKE_DIR}/bin/}cmake -DBUILD_TESTING:BOOL=OFF -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DFFTW3_FIND_COMPONENTS=DOUBLE_SERIAL ..
 
 echo "ssht: Building..."
 ${MAKE}
